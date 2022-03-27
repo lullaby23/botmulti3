@@ -18,9 +18,9 @@ async def is_subscribed(filter, client, update):
         return True
     if not FORCE_SUB_GROUP:
         return True
-    elif not FORCE_SUB_CHANNELS:
+    if not FORCE_SUB_CHANNELS:
         return True
-    elif not FORCE_SUB_GROUPS:
+    if not FORCE_SUB_GROUPS:
         return True
     user_id = update.from_user.id
     if user_id in ADMINS:
@@ -45,6 +45,17 @@ async def is_subscribed(filter, client, update):
         return False
 
     return member.status in ["creator", "administrator", "member"]
+
+ except UserNotParticipant:
+        return False
+
+    return member.status in ["creator", "administrator", "member"]
+
+ except UserNotParticipant:
+        return False
+
+    return member.status in ["creator", "administrator", "member"]
+
 
 
 async def encode(string):
