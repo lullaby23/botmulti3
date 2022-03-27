@@ -118,11 +118,9 @@ async def start_command(client: Client, message: Message):
                 InlineKeyboardButton("Channel 1", url=client.invitelink),
                 InlineKeyboardButton("Channel 2", url=client.invitelink2),
             ],
-                        [
-                InlineKeyboardButton("Channel 3", url=client.invitelin3),
-                InlineKeyboardButton("Channel 4", url=client.invitelink4),
-            ],
             [
+                 InlineKeyboardButton("Channel 3", url=client.invitelin3),
+                InlineKeyboardButton("Channel 4", url=client.invitelink4),
                 InlineKeyboardButton("Close", callback_data="close"),
             ],
         ]
