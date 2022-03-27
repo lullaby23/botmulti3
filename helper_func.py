@@ -26,35 +26,15 @@ async def is_subscribed(filter, client, update):
     if user_id in ADMINS:
         return True
     try:
-        member = await client.get_chat_member(
-            chat_id=FORCE_SUB_CHANNEL, user_id=user_id
-        )
+        member = await client.get_chat_member(chat_id=FORCE_SUB_CHANNEL, user_id=user_id)
+        member = await client.get_chat_member(chat_id=FORCE_SUB_CHANNELS, user_id=user_id)
         member = await client.get_chat_member(chat_id=FORCE_SUB_GROUP, user_id=user_id)
-                member = await client.get_chat_member(
-            chat_id=FORCE_SUB_CHANNELS, user_id=user_id
-        )
         member = await client.get_chat_member(chat_id=FORCE_SUB_GROUPS, user_id=user_id)
         
     except UserNotParticipant:
         return False
 
     return member.status in ["creator", "administrator", "member"]
-
-   except UserNotParticipant:
-        return False
-
-    return member.status in ["creator", "administrator", "member"]
-
-except UserNotParticipant:
-        return False
-
-    return member.status in ["creator", "administrator", "member"]
-
-except UserNotParticipant:
-        return False
-
-    return member.status in ["creator", "administrator", "member"]
-
 
 
 async def encode(string):
