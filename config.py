@@ -33,7 +33,6 @@ GROUP = os.environ.get("GROUP", "OkaeriUserbot")
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 FORCE_SUB_GROUP = int(os.environ.get("FORCE_SUB_GROUP", "0"))
 FORCE_SUB_CHANNELS = int(os.environ.get("FORCE_SUB_CHANNELS", "0"))
-FORCE_SUB_GROUPS = int(os.environ.get("FORCE_SUB_GROUPS", "0"))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
